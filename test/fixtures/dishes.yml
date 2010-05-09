@@ -1,0 +1,13 @@
+one:
+  category_id: 1
+  name: MyString
+  desc: MyText
+  price: 
+  available: false
+
+two:
+  category_id: 1
+  name: MyString
+  desc: MyText
+  price: 
+  available: false

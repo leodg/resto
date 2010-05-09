@@ -1,0 +1,28 @@
+<% title "Dish" %>
+
+<p>
+  <strong>Category:</strong>
+  <%=h @dish.category_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%=h @dish.name %>
+</p>
+<p>
+  <strong>Desc:</strong>
+  <%=h @dish.desc %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%=h @dish.price %>
+</p>
+<p>
+  <strong>Available:</strong>
+  <%=h @dish.available %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_dish_path(@dish) %> |
+  <%= link_to "Destroy", @dish, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", dishes_path %>
+</p>

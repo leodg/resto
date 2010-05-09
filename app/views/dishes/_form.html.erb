@@ -1,0 +1,24 @@
+<% form_for @dish do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :category_id %><br />
+    <%= f.collection_select :category_id, Category.all(:order => "name"), :id, :name, :include_blank => false %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :desc %><br />
+    <%= f.text_area :desc %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :available %><br />
+    <%= f.check_box :available %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
