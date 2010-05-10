@@ -1,24 +1,46 @@
 <% form_for @dish do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :category_id %><br />
-    <%= f.collection_select :category_id, Category.all(:order => "name"), :id, :name, :include_blank => false %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :desc %><br />
-    <%= f.text_area :desc %>
-  </p>
-  <p>
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </p>
-  <p>
-    <%= f.label :available %><br />
-    <%= f.check_box :available %>
-  </p>
-  <p><%= f.submit %></p>
+
+<table>
+
+  <tr>
+    <td>
+      <p>
+        <%= f.label :name, "Название" %><br />
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :category_id, "Категория" %><br />
+
+        <%= tree_select(Category.find(:all, :conditions => "parent_id is null"), 'dish', 'category_id', @dish.category , 0, true, false, true) %>
+        
+      </p>
+      <p>
+        <%= f.label :desc, "Описание" %><br />
+        <%= f.text_area :desc %>
+      </p>
+      <p>
+        <%= f.label :price, "Цена" %><br />
+        <%= f.text_field :price, :size => 5 %>
+      </p>
+      <p>
+        <%= f.check_box :available, :checked => true %>
+        <%= f.label :available, "Доступно" %>
+      </p>
+      <p><%= f.submit %></p>
+    </td>
+
+    <td>
+      <div>        
+        <% f.fields_for :compositions do |builder| %>
+            <%= render 'composition_fields', :f => builder %>
+        <% end %>
+        <%= link_to_add_fields "Еще ингредиент", f, :compositions %>
+      </div>
+    </td>
+  </tr>
+
+
+</table>
+
 <% end %>

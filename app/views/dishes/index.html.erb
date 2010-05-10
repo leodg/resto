@@ -1,25 +1,25 @@
-<% title "Dishes" %>
+<% title "Блюда" %>
 
 <table>
   <tr>
-    <th>Category</th>
-    <th>Name</th>
-    <th>Desc</th>
-    <th>Price</th>
-    <th>Available</th>
+    <th>Название</th>
+    <th>Категория</th>
+    <th>Описание</th>
+    <th>Цена</th>
+    <th>Доступно</th>
   </tr>
   <% for dish in @dishes %>
     <tr>
-      <td><%=h dish.category_id %></td>
       <td><%=h dish.name %></td>
+      <td><%=h dish.category.name %></td>
       <td><%=h dish.desc %></td>
       <td><%=h dish.price %></td>
       <td><%=h dish.available %></td>
-      <td><%= link_to "Show", dish %></td>
-      <td><%= link_to "Edit", edit_dish_path(dish) %></td>
-      <td><%= link_to "Destroy", dish, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Показать", dish %></td>
+      <td><%= link_to "Изменить", edit_dish_path(dish) %></td>
+      <td><%= link_to "Удалить", dish, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Dish", new_dish_path %></p>
+<p><%= link_to "Новое блюдо", new_dish_path %></p>

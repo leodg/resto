@@ -1,0 +1,9 @@
+<p class="fields">
+  <%= f.label :ingredient, "Ингредиент" %>
+  <%= f.text_field :ingredient_name, :size => 20 %>
+
+  <%= f.label :quantity, "кол-во"  %>
+  <%= f.text_field :quantity, :size => 5 %>
+
+  <%= link_to_remove_fields "Удалить", f %>  
+</p>

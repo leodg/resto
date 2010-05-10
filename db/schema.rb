@@ -9,11 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100503173434) do
+ActiveRecord::Schema.define(:version => 20100509084126) do
 
   create_table "categories", :force => true do |t|
     t.integer  "parent_id"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "compositions", :force => true do |t|
+    t.integer  "dish_id"
+    t.integer  "ingredient_id"
+    t.float    "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,6 +32,13 @@ ActiveRecord::Schema.define(:version => 20100503173434) do
     t.text     "desc"
     t.float    "price"
     t.boolean  "available"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ingredients", :force => true do |t|
+    t.string   "name"
+    t.integer  "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

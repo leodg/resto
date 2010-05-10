@@ -9,6 +9,7 @@ class DishesController < ApplicationController
   
   def new
     @dish = Dish.new
+    3.times { @dish.compositions.build }
   end
   
   def create

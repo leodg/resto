@@ -1,0 +1,19 @@
+<% title "Ингредиенты" %>
+
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Категория</th>
+  </tr>
+  <% for ingredient in @ingredients %>
+    <tr>
+      <td><%=h ingredient.name %></td>
+      <td><%=h ingredient.category %></td>
+      <td><%= link_to "Показать", ingredient %></td>
+      <td><%= link_to "Изменить", edit_ingredient_path(ingredient) %></td>
+      <td><%= link_to "Удалить", ingredient, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Ingredient", new_ingredient_path %></p>

@@ -79,3 +79,20 @@ a {
   font-size: 12px;
   list-style: disc;
 }
+
+#menu {
+    font-size: 20px;    
+}
+
+table td {    
+    padding: 5px;
+    vertical-align: top;
+}
+
+ul {
+    padding: 0px;
+}
+
+ul li {
+    margin-left: 20px;
+}

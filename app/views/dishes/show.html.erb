@@ -1,28 +1,35 @@
-<% title "Dish" %>
+<% title "Блюдо" %>
 
 <p>
-  <strong>Category:</strong>
-  <%=h @dish.category_id %>
-</p>
-<p>
-  <strong>Name:</strong>
+  <strong>Название:</strong>
   <%=h @dish.name %>
 </p>
 <p>
-  <strong>Desc:</strong>
+  <strong>Категория:</strong>
+  <%=h @dish.category.name %>
+</p>
+<p>
+  <strong>Описание:</strong>
   <%=h @dish.desc %>
 </p>
 <p>
-  <strong>Price:</strong>
+  <strong>Цена:</strong>
   <%=h @dish.price %>
 </p>
 <p>
-  <strong>Available:</strong>
+  <strong>Доступно:</strong>
   <%=h @dish.available %>
 </p>
 
+<ul>
+  <strong>Ингридиенты:</strong>
+  <% for composition in @dish.compositions %>
+    <li><%= composition.ingredient_name %>, <%= composition.quantity %></li>
+  <% end %>
+</ul>
+
 <p>
-  <%= link_to "Edit", edit_dish_path(@dish) %> |
-  <%= link_to "Destroy", @dish, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", dishes_path %>
+  <%= link_to "Изменить", edit_dish_path(@dish) %> |
+  <%= link_to "Удалить", @dish, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Вернуться назад", dishes_path %>
 </p>

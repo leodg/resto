@@ -2,7 +2,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :parent_id %><br />
-    <%= f.collection_select :parent_id, Category.all(:order => "name"), :id, :name, :include_blank => true %>
+    <%= tree_select(Category.find(:all, :conditions => "parent_id is null"),  'category', 'parent_id', @category , 0, true, true, true) %>
   </p>
   <p>
     <%= f.label :name %><br />

@@ -1,4 +1,4 @@
-<% title "Categories" %>
+<% title "Разделы меню" %>
 
 <table>
   <tr>
@@ -9,11 +9,11 @@
     <tr>
       <td><%=h category.parent_id %></td>
       <td><%=h category.name %></td>
-      <td><%= link_to "Show", category %></td>
-      <td><%= link_to "Edit", edit_category_path(category) %></td>
-      <td><%= link_to "Destroy", category, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Показать", category %></td>
+      <td><%= link_to "Изменить", edit_category_path(category) %></td>
+      <td><%= link_to "Удалить", category, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Category", new_category_path %></p>
+<p><%= link_to "Новый раздел", new_category_path %></p>
