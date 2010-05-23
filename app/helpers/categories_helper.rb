@@ -17,7 +17,7 @@ module CategoriesHelper
     if categories.length > 0
       level += 1 # keep position
       categories.collect do |cat|
-        html << "\t<option value=\"#{cat.id}\" style=\"padding-left:#{level * 10}px\""
+        html << "\t<option value=\"#{cat.id}\" style=\"padding-left:#{level * 20}px\""
         
         html << ' selected="selected"' if  selected && select_parent_id && cat.id == selected.parent_id
         html << ' selected="selected"' if  selected && !select_parent_id && cat.id == selected.id
