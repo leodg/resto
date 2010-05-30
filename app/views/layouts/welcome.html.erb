@@ -17,12 +17,13 @@
           <%= content_tag :div, msg, :id => "flash_#{name}" %>
         <%- end -%>
 
-      <div id="menu">
-        <%= link_to 'Блюда', dishes_path %>&nbsp;
-        <%= link_to 'Разделы меню', categories_path %>&nbsp;
-        <%= link_to 'Ингредиенты', ingredients_path %>&nbsp;
-        <%= link_to 'Клиенты', users_path %>&nbsp;
-      </div>
+        <% unless current_user %>
+        <div id="menu">
+          <%= link_to 'Представиться', login_path %>
+        </div>
+        <% else %>
+          <%= link_to 'Выйти', logout_path %>
+        <%  end %>
 
         <%- if show_title? -%>
           <div id="title"><h1><%=h yield(:title) %></h1>

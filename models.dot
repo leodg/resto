@@ -1,9 +1,0 @@
-digraph models_diagram {
-	graph[overlap=false, splines=true]
-	"Category" [shape=Mrecord, label="{Category|name :string\lcreated_at :datetime\lupdated_at :datetime\l}"]
-	"Composition" [shape=Mrecord, label="{Composition|quantity :float\lcreated_at :datetime\lupdated_at :datetime\l}"]
-	"Ingredient" [shape=Mrecord, label="{Ingredient|name :string\lcategory :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
-	"Dish" [shape=Mrecord, label="{Dish|name :string\ldesc :text\lprice :float\lavailable :boolean\lcreated_at :datetime\lupdated_at :datetime\lphoto_file_name :string\lphoto_content_type :string\lphoto_file_size :integer\lphoto_updated_at :datetime\l}"]
-	"Category" -> "Category" [label="children", arrowtail=crow, arrowhead=dot, dir=both]
-	"Dish" -> "Composition" [arrowtail=crow, arrowhead=dot, dir=both]
-}

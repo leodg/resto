@@ -14,7 +14,7 @@
       <td><%=h dish.name %></td>
       <td><%=h dish.category.name %></td>
       <td><%=h dish.desc %></td>
-      <td><%=h dish.price %></td>
+      <td><%=h dish.price %><span class="rur">p<span>уб.</span></span></td>
       <td><%= link_to "Показать", dish %></td>
       <td><%= link_to "Изменить", edit_dish_path(dish) %></td>
       <td><%= link_to "Удалить", dish, :confirm => 'Are you sure?', :method => :delete %></td>

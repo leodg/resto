@@ -1,0 +1,16 @@
+<% form_for @user do |f|  %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name, 'Имя' %><br />
+    <%= f.text_field :name,  { :autocomplete => :off } %>
+  </p>
+  <p>
+    <%= f.label :password, 'Пароль' %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password, 'Пароль еще раз' %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

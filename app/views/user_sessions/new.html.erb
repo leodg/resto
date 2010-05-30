@@ -1,0 +1,16 @@
+<% title "Представьтесь, пожалуйста" %>
+
+<% form_for @user_session do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name , 'Имя' %><br />
+    <%= f.text_field :name, { :autocomplete => :off } %>
+  </p>
+  <p>
+    <%= f.label :password , 'Пароль' %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+
+
