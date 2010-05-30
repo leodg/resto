@@ -1,11 +1,11 @@
 <% form_for @category do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :parent_id %><br />
-    <%= tree_select(Category.find(:all, :conditions => "parent_id is null"),  'category', 'parent_id', @category , 0, true, true, true) %>
+    <%= f.label :parent_id, "Родитель" %><br />
+    <%= category_tree_select(Category.find(:all, :conditions => "parent_id is null"),  'category', 'parent_id', @category , 0, true, true, true) %>
   </p>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name, "Название" %><br />
     <%= f.text_field :name %>
   </p>
   <p><%= f.submit %></p>

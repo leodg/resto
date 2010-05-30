@@ -1,9 +1,6 @@
-<% title "Блюдо" %>
+<% title @dish.name %>
 
-<p>
-  <strong>Название:</strong>
-  <%=h @dish.name %>
-</p>
+
 <p>
   <strong>Категория:</strong>
   <%=h @dish.category.name %>
@@ -12,6 +9,11 @@
   <strong>Описание:</strong>
   <%=h @dish.desc %>
 </p>
+
+<p>
+  <%= image_tag @dish.photo.url(:normal) if @dish.photo? %>
+</p>
+
 <p>
   <strong>Цена:</strong>
   <%=h @dish.price %>
@@ -21,12 +23,12 @@
   <%=h @dish.available %>
 </p>
 
-<ul>
-  <strong>Ингридиенты:</strong>
+  <strong>Ингредиенты:</strong>
+  <ul>
   <% for composition in @dish.compositions %>
     <li><%= composition.ingredient_name %>, <%= composition.quantity %></li>
   <% end %>
-</ul>
+  </ul>
 
 <p>
   <%= link_to "Изменить", edit_dish_path(@dish) %> |

@@ -1,4 +1,6 @@
-<% form_for @dish do |f| %>
+<%= javascript_include_tag "autocomplete.js"   %>
+
+<% form_for @dish, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 
 <table>
@@ -11,9 +13,11 @@
       </p>
       <p>
         <%= f.label :category_id, "Категория" %><br />
-
-        <%= tree_select(Category.find(:all, :conditions => "parent_id is null"), 'dish', 'category_id', @dish.category , 0, true, false, true) %>
-        
+        <%= category_tree_select(Category.find(:all, :conditions => "parent_id is null"), 'dish', 'category_id', @dish.category , 0, true, false, false) %>
+      </p>
+      <p>
+        <%= f.label :photo, "Фото" %><br />
+        <%= f.file_field :photo %>
       </p>
       <p>
         <%= f.label :desc, "Описание" %><br />
@@ -24,16 +28,27 @@
         <%= f.text_field :price, :size => 5 %>
       </p>
       <p>
-        <%= f.check_box :available, :checked => true %>
+        <% if @dish.available %>
+          <%= f.check_box :available, :checked => true %>
+        <% else %>
+          <%= f.check_box :available, :checked => false %>
+        <% end %>
+
         <%= f.label :available, "Доступно" %>
       </p>
       <p><%= f.submit %></p>
     </td>
 
     <td>
-      <div>        
+      <div>
+
+        <script type="text/javascript">
+          var c=0;
+        </script>
+
         <% f.fields_for :compositions do |builder| %>
             <%= render 'composition_fields', :f => builder %>
+            <%= autocomplete_add_2 %>
         <% end %>
         <%= link_to_add_fields "Еще ингредиент", f, :compositions %>
       </div>
@@ -43,4 +58,4 @@
 
 </table>
 
-<% end %>
+<% end %>    

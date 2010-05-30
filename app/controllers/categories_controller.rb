@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.find(:all, :conditions => "parent_id is null");
   end
   
   def show

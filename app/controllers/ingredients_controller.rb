@@ -1,6 +1,26 @@
 class IngredientsController < ApplicationController
   def index
-    @ingredients = Ingredient.all
+    if params[:query]
+      @ingredients = Ingredient.find(:all, :conditions => ['name LIKE ?', "%#{params[:query]}%"])
+
+
+      suggestions = Array.new
+      for ingr in @ingredients
+        suggestions.push(ingr.name)
+      end
+
+       response.headers['Content-type'] = "text/plain; charset=utf-8"
+
+      ret = {}
+      ret["query"] = params[:query]
+      ret["suggestions"] = suggestions
+      
+
+      render :text => ret.to_json
+      
+    else
+      @ingredients = Ingredient.all
+    end
   end
   
   def show

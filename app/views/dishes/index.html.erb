@@ -2,19 +2,19 @@
 
 <table>
   <tr>
+    <th>Фото</th>
     <th>Название</th>
     <th>Категория</th>
     <th>Описание</th>
     <th>Цена</th>
-    <th>Доступно</th>
   </tr>
   <% for dish in @dishes %>
-    <tr>
+    <% unless dish.available %> <tr class="unavaliable"> <% else %><tr><%  end %>
+      <td><%= image_tag dish.photo.url(:small) if dish.photo? %></td>
       <td><%=h dish.name %></td>
       <td><%=h dish.category.name %></td>
       <td><%=h dish.desc %></td>
       <td><%=h dish.price %></td>
-      <td><%=h dish.available %></td>
       <td><%= link_to "Показать", dish %></td>
       <td><%= link_to "Изменить", edit_dish_path(dish) %></td>
       <td><%= link_to "Удалить", dish, :confirm => 'Are you sure?', :method => :delete %></td>

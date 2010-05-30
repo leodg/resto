@@ -1,0 +1,13 @@
+
+  <li>
+    <span>
+        <%=h category.name %>
+
+        <small>(
+        <%= link_to "Показать", category %>
+        <%= link_to "Изменить", edit_category_path(category) %>
+        <%= link_to "Удалить", category, :confirm => 'Are you sure?', :method => :delete %>
+
+        )</small>
+    </span>
+  </li>
