@@ -25,7 +25,7 @@ body {
     span.rur span:before { content: '\2013'; }
 
 
-/*
+
 #title{
     height: 109px;
     background: url(/images/background-title.png) repeat-x center top;
@@ -71,7 +71,7 @@ body {
 #title b.right{
     background: url(/images/background-title.png) top right;
     right:-36px;
-}*/
+}
 
 /*.next span{
     background: url(/images/icon-linkpost-arrow.png) no-repeat top left;
@@ -105,7 +105,7 @@ a {
   overflow: hidden;
 }
 
-#container {
+#content {
   width: 85%;
   margin: 0 auto;
   background: url(/images/bg.png);
@@ -115,6 +115,8 @@ a {
   margin-bottom: 20px;
   font-size: 17px;
 }
+
+input { font-size: 17px; }
 
 #flash_notice, #flash_error {
   padding: 5px 8px;
@@ -190,7 +192,7 @@ table td, th {
 }
 
 .autocomplete-w1 { background:url(/images/shadow.png) no-repeat bottom right; position:absolute; top:4px; left:3px; /* IE6 fix: */ _background:none; _top:1px; }
-.autocomplete { width:300px; border:1px solid #999; background:#FFF; cursor:default; text-align:left; max-height:350px; overflow:auto; margin:-6px 6px 6px -6px; /* IE specific: */ _height:350px;  _margin:0px 6px 6px 0; overflow-x:hidden; }
+.autocomplete { width:300px; border:1px solid #999; background:#FFF; cursor:default; text-align:left; max-height:350px; overflow:auto; margin:-6px 6px 6px -6px; /* IE specific: */ _height:350px;  _margin:0px 6px 6px 0; overflow-x:hidden; color: black; }
 .autocomplete .selected { background:#F0F0F0; }
 .autocomplete div { padding:2px 5px; white-space:nowrap; }
 .autocomplete strong { font-weight:normal; color:#3399FF; }

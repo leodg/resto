@@ -5,6 +5,7 @@
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "carousel"  %>
     <%= yield(:head) %>
   </head>
   <body>
@@ -12,17 +13,10 @@
 
 
     <div id="wrap">
-      <div id="container">
+      <div id="content">
         <%- flash.each do |name, msg| -%>
           <%= content_tag :div, msg, :id => "flash_#{name}" %>
         <%- end -%>
-
-      <div id="menu">
-        <%= link_to 'Блюда', dishes_path %>&nbsp;
-        <%= link_to 'Разделы меню', categories_path %>&nbsp;
-        <%= link_to 'Ингредиенты', ingredients_path %>&nbsp;
-        <%= link_to 'Клиенты', users_path %>&nbsp;
-      </div>
 
         <%- if show_title? -%>
           <div id="title"><h1><%=h yield(:title) %></h1>
