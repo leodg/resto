@@ -14,10 +14,13 @@
         <% for dish in @dishes %>
           <li>
             <%= image_tag dish.photo.url(:normal) if dish.photo? %><br />
-            <%=h dish.name %>
-            <%=h dish.category.name %>
+            <h1><%=h dish.name %></h1>
             <%=h dish.desc %>
             <%=h dish.price %><span class="rur">p<span>уб.</span></span>
+
+            <br />
+            <span id="button"><%= link_to "Подробнее", dish %></span><br />
+            <span id="button"><%= link_to "Взять", dish %></span>
           </li>
         <% end %>
       </ul>

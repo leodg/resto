@@ -27,18 +27,17 @@ body {
 
 
 #title{
-    height: 109px;
+    height: 80px;
     background: url(/images/background-title.png) repeat-x center top;
     float:left;
     position:relative;
-    margin-left:68px;
-    margin-top:40px;
+
     text-shadow: #000 0px 2px 0px;
 
 }
 
 #title h1{
-    font-size:42px;
+    font-size:25px;
     font-weight:bold;
     text-shadow: #fff 0px 1px 0px;
     margin-top:15px;
@@ -57,7 +56,7 @@ body {
 }
 
 #title b{
-    height:93px;
+    height:70px;
     width:36px;
     position: absolute;
     top:0px;
@@ -108,12 +107,16 @@ a {
 #content {
   width: 85%;
   margin: 0 auto;
-  background: url(/images/bg.png);
+/*  background: url(/images/bg.png);*/
   padding: 20px 40px;
-  border: solid 1px black;
+/*  border: solid 1px black;*/
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 17px;
+  font-size: 25px;
+}
+
+#content h1{
+    font-size: 30px;
 }
 
 input { font-size: 17px; }
