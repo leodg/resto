@@ -1,0 +1,50 @@
+<% title "Меню" %>
+
+<%= stylesheet_link_tag 'menu' %>
+<%= stylesheet_link_tag 'cart' %>
+
+<div id="menu_carousel">
+  <div class="previous_button"></div>
+    <div class="container">
+
+      <ul>
+        <% for dish in @dishes %>
+          <li>
+            <%= image_tag dish.photo.url(:normal) if dish.photo? %>
+            <h1><%=h dish.name %></h1>
+            <%#=h dish.desc %>
+            <%=h dish.price %><span class="rur">p<span>уб.</span></span>
+
+            <br />
+            <span id="button"><%= link_to "Подробнее", dish %></span><br />
+
+            <% form_remote_tag :url => { :action => 'add_to_cart', :id => dish } do %>
+              <%= submit_tag "Заказать" %>
+            <% end %>
+
+
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
+  <div class="next_button"></div>
+</div>
+
+
+<%= javascript_tag "
+      function runMenu() {
+              menuCarousel = new UI.Carousel('menu_carousel');
+      }
+      Event.observe(window, 'load', runMenu);
+    "
+%>
+
+<%#= javascript_tag "
+      function runCart() {
+              cartCarousel = new UI.Carousel('cart_carousel');
+      }
+      Event.observe(window, 'load', runCart);
+    "
+%>#
+

@@ -24,6 +24,10 @@
           </div><div class="clear"></div>
         <%- end -%>
 
+        <div id="cart">
+          <%= render(:partial => "cart" , :object => @cart) %>
+        </div>
+
         <%= yield %>
       </div>
     </div>

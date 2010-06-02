@@ -6,6 +6,7 @@ body {
   color: #fff;
   margin: 0;
   padding: 0;
+  /*position:fixed; overflow:hidden;*/
 }
 
 #wrap{
@@ -19,7 +20,7 @@ body {
 
 }
 
-    @font-face { font-family: "Rubl Sign"; src: url(stylesheets/ruble.eot); }
+    @font-face { font-family: "Rubl Sign"; src: url(ruble.eot); }
     span.rur { font-family: "Rubl Sign"; text-transform: uppercase; // text-transform: none;}
     span.rur span { position: absolute; overflow: hidden; width: .45em; height: 1em; margin: .4ex 0 0 -.65em; // display: none; }
     span.rur span:before { content: '\2013'; }
@@ -199,3 +200,22 @@ table td, th {
 .autocomplete .selected { background:#F0F0F0; }
 .autocomplete div { padding:2px 5px; white-space:nowrap; }
 .autocomplete strong { font-weight:normal; color:#3399FF; }
+
+
+#cart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: url(/images/bg.png);
+    border: solid 1px black;
+    padding: 10px;
+    z-index: 2;
+}
+
+#cart h1 {
+    font-size: 20px;
+}
+
+#cart h2 {
+    font-size: 15px;
+}

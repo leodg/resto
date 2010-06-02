@@ -1,0 +1,78 @@
+/* Horizontal Carousel */
+#menu_carousel {
+  float: left;
+  width: 986px;
+  height: 1000px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 180px;
+}
+
+#menu_carousel .container {
+  float: left;
+  width: 800px;
+  height: 1000px;
+  position: relative;    
+  overflow: hidden;  
+}
+
+#menu_carousel ul {
+  margin: 0;
+  padding:0;
+  width: 100000px;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1000px;
+}                      
+
+
+/* 1 элемент */
+#menu_carousel ul li {
+  width: 300px;
+  height: 1000px;
+  text-align: center; 
+  list-style:none;   
+  float:left;
+  padding: 20px;
+}
+
+#menu_carousel .previous_button {
+  float:left;  
+  width: 93px;
+  height: 70px;
+  background: url(/images/buttons/left_70.png);
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  top: 250px;
+}
+
+#menu_carousel .previous_button_over {
+  background: url(/images/buttons/left_70.png);
+}
+
+#menu_carousel .previous_button_disabled {
+  background: url(/images/buttons/left_70_not.png);
+  cursor: default;
+}
+
+#menu_carousel .next_button {
+  float:left;  
+  width: 93px;
+  height: 70px;
+  background: url(/images/buttons/right_70.png);
+  z-index: 100;
+  cursor: pointer;
+  position: relative;
+  top: 250px;
+}
+
+#menu_carousel .next_button_over {
+  background: url(/images/buttons/right_70.png);
+}
+
+#menu_carousel .next_button_disabled {
+  background: url(/images/buttons/right_70_not.png);
+  cursor: default;
+}

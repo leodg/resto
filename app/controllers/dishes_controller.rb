@@ -1,10 +1,23 @@
 class DishesController < ApplicationController
   def index
     @dishes = Dish.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @dishes }
+    end
+    
   end
   
   def show
     @dish = Dish.find(params[:id])
+    @cart = find_cart
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @dishe }
+    end
+
   end
   
   def new
