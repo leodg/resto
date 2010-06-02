@@ -1,8 +1,5 @@
 <% title "Меню" %>
 
-<%= stylesheet_link_tag 'menu' %>
-<%= stylesheet_link_tag 'cart' %>
-
 <div id="menu_carousel">
   <div class="previous_button"></div>
     <div class="container">
@@ -21,8 +18,7 @@
             <% form_remote_tag :url => { :action => 'add_to_cart', :id => dish } do %>
               <%= submit_tag "Заказать" %>
             <% end %>
-
-
+            
           </li>
         <% end %>
       </ul>
@@ -40,11 +36,4 @@
     "
 %>
 
-<%#= javascript_tag "
-      function runCart() {
-              cartCarousel = new UI.Carousel('cart_carousel');
-      }
-      Event.observe(window, 'load', runCart);
-    "
-%>#
 

@@ -1,76 +1,36 @@
 /* Horizontal Carousel */
-#cart_carousel {
-  float: left;
-  width: 986px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-#cart_carousel .container {
-  float: left;
-  width: 800px;
-  height: 50px;
-  position: relative;    
-  overflow: hidden;  
-}
-
-#cart_carousel ul {
-  margin: 0;
-  padding:0;
-  width: 100000px;
-  position: relative;
+#cart {    
+  height: 160px;
+  width: 100%;
+  text-align: right;
+  /*background-color: green;*/
+  position: absolute;
   top: 0;
-  left: 0;
-  height: 1000px;
-}                      
-
-
-/* 1 элемент */
-#cart_carousel ul li {
-  width: 300px;
-  height: 50px;
-  text-align: center; 
-  list-style:none;   
-  float:left;
-  padding: 20px;
 }
 
-#cart_carousel .previous_button {
-  float:left;  
-  width: 93px;
-  height: 70px;
-  background: url(/images/buttons/left_70.png);
-  z-index: 100;
-  cursor: pointer;
-  position: relative;
-  top: 10px;
+#cart .items {
+    float: left;
+    width: 1040px;
 }
 
-#cart_carousel .previous_button_over {
-  background: url(/images/buttons/left_70.png);
+#cart li {
+    display: inline-block;
+    font-size: 15px;
+    padding: 5px;
 }
 
-#cart_carousel .previous_button_disabled {
-  background: url(/images/buttons/left_70_not.png);
-  cursor: default;
+#cart h2 {
+    font-size: 15px;
+    margin-right: 20px;    
 }
 
-#cart_carousel .next_button {
-  float:left;  
-  width: 93px;
-  height: 70px;
-  background: url(/images/buttons/right_70.png);
-  z-index: 100;
-  cursor: pointer;
-  position: relative;
-  top: 10px;
+#cart .buttons {
+
 }
 
-#cart_carousel .next_button_over {
-  background: url(/images/buttons/right_70.png);
-}
-
-#cart_carousel .next_button_disabled {
-  background: url(/images/buttons/right_70_not.png);
-  cursor: default;
+#cart input{
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px;
+  width: 200px;
 }

@@ -4,6 +4,9 @@
   <head>
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'cart' %>
+    <%= stylesheet_link_tag 'menu' %>
+    <%= stylesheet_link_tag 'category_menu' %>
     <%= javascript_include_tag :defaults %>
     <%= javascript_include_tag "carousel"  %>
     <%= yield(:head) %>
@@ -13,23 +16,28 @@
 
 
     <div id="wrap">
-      <div id="content">
-        <%- flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <%- end -%>
 
-        <%- if show_title? -%>
-          <div id="title"><h1><%=h yield(:title) %></h1>
-            <b class="left"></b><b class="right"></b>
-          </div><div class="clear"></div>
-        <%- end -%>
+      <table class="main_table">
+        <tr>
+          <td class="category_menu">
+              <%= render(:partial => "category" , :object => @categories) %>
+          </td>
+          <td class="content">
+              <%- flash.each do |name, msg| -%>
+                <%= content_tag :div, msg, :id => "flash_#{name}" %>
+              <%- end -%>
 
-        <div id="cart">
-          <%= render(:partial => "cart" , :object => @cart) %>
-        </div>
+            <%= yield %>
 
-        <%= yield %>
-      </div>
-    </div>
+
+          </td>
+        </tr>
+      </table>
+
+      <div id="cart">
+        <%= render(:partial => "cart" , :object => @cart) %>
+      </div>    
+
+  
   </body>
 </html>

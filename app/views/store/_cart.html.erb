@@ -1,22 +1,11 @@
-
-
-<h1>Ваш заказ</h1>
-
-<div id="cart_carousel">
-      <div class="previous_button"></div>
-      <div class="container">
-
-          <ul>
-            <%= render(:partial => "cart_item" , :collection => cart.items) %>
-          </ul>
-
-        </div>
-      <div class="next_button"></div>
-    </div>
-
-<h2>Итого: <%= cart.total_price %><span class="rur">p<span>уб.</span></span></h2>
-
-<%#= button_to 'Отменить заказ', :action => 'empty_cart' %>
-<%#= button_to 'Закончить заказ', :action => 'finish_cart' %>
-
-
+<div class="items">
+  <ul>
+  <%= render(:partial => "cart_item" , :collection => cart.items) %>
+  </ul>
+  <h2>Итого: <%= cart.total_price %><span class="rur">p<span>уб.</span></span></h2>
+</div>
+<div class="buttons">
+  <%= button_to 'Отменить заказ', :action => 'empty_cart', :confirm => "Are you sure?"%>
+  <%= button_to 'Закончить заказ', :action => 'finish_cart' %>
+</div>
+<div id="clear"></div>
