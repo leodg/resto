@@ -1,4 +1,4 @@
-/* Horizontal Carousel */
+﻿/* Horizontal Carousel */
 #menu_carousel .price {
     font-size: 25px;
 }
@@ -26,16 +26,16 @@
 
 #menu_carousel {
   width: 100%;
-  height: 800px;
+  height: 600px;
 
-    margin-left: 50px;
-    margin-top: 150px;
+    margin-left: 80px;
+    margin-top: 100px;
 }
 
 #menu_carousel .container {
   float: left;
   width: 790px;
-  height: 800px;
+  height: 600px;
   position: relative;
   overflow: hidden;  
 }
