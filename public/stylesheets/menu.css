@@ -1,10 +1,16 @@
 /* Horizontal Carousel */
-#menu_carousel {
-  width: 100%;
-  height: 600px;
+#menu_carousel .price {
+    font-size: 25px;
+}
 
-    margin-left: 50px;
-    margin-top: 150px;
+#menu_carousel h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+}
+
+#menu_carousel {
+    font-size: 20px;
 }
 
 #menu_carousel input{
@@ -14,10 +20,22 @@
   width: 200px;
 }
 
+#menu_carousel #buttons {
+    padding-top: 20px;
+}
+
+#menu_carousel {
+  width: 100%;
+  height: 800px;
+
+    margin-left: 50px;
+    margin-top: 150px;
+}
+
 #menu_carousel .container {
   float: left;
   width: 790px;
-  height: 600px;
+  height: 800px;
   position: relative;
   overflow: hidden;  
 }

@@ -31,12 +31,16 @@ module CategoriesHelper
   end
 
   
-  def category_tree_print(categories, html='')
+  def category_tree_print(categories, html='', template='')
     if categories.length > 0
       html.concat( '<ul>' )
       for cat in categories
-        html.concat( render :partial => cat )
-        category_tree_print(cat.children, html) unless cat.children.blank?
+        unless (template.blank?)
+          html.concat( render :partial => cat, :layout => template)
+        else
+          html.concat( render :partial => cat)
+        end
+        category_tree_print(cat.children, html, template) unless cat.children.blank?
       end
       html.concat( '</ul>' )
     end

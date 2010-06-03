@@ -10,7 +10,7 @@
 
 #cart .items {
     float: left;
-    width: 1040px;
+    width: 1000px;
 }
 
 #cart li {
@@ -20,12 +20,11 @@
 }
 
 #cart h2 {
-    font-size: 15px;
-    margin-right: 20px;    
+    font-size: 25px;   
 }
 
 #cart .buttons {
-
+    margin-right: 30px;
 }
 
 #cart input{

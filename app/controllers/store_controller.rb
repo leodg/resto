@@ -1,7 +1,8 @@
 class StoreController < ApplicationController
   def index
-    @dishes=Dish.find_for_sale
+    @dishes = Dish.find_for_sale
     @cart = find_cart
+    @categories = Category.find(:all, :conditions => "parent_id is null");
   end
 
   def add_to_cart

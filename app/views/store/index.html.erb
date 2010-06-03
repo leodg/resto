@@ -10,14 +10,16 @@
             <%= image_tag dish.photo.url(:normal) if dish.photo? %>
             <h1><%=h dish.name %></h1>
             <%#=h dish.desc %>
-            <%=h dish.price %><span class="rur">p<span>уб.</span></span>
+            <span class="price"><%=h dish.price %><span class="rur">p<span>уб.</span></span></span>
 
-            <br />
-            <span id="button"><%= link_to "Подробнее", dish %></span><br />
 
-            <% form_remote_tag :url => { :action => 'add_to_cart', :id => dish } do %>
-              <%= submit_tag "Заказать" %>
-            <% end %>
+            <div id="buttons">
+                <%= submit_tag "Подробнее" %>
+
+                <% form_remote_tag :url => { :action => 'add_to_cart', :id => dish } do %>
+                  <%= submit_tag "Заказать" %>
+                <% end %>
+            </div>
             
           </li>
         <% end %>
