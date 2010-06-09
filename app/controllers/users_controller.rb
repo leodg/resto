@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout "admin"
   before_filter :require_user, :only => [:edit, :update]
 
   def new

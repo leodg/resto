@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title><%= h(yield(:title) || "Untitled") %></title>
+    <title><%= h(yield(:title) || "Restaurant") %></title>
     <%= stylesheet_link_tag 'application' %>
     <%= stylesheet_link_tag 'cart' %>
     <%= stylesheet_link_tag 'menu' %>
@@ -12,8 +12,6 @@
     <%= yield(:head) %>
   </head>
   <body>
-
-
 
     <div id="wrap">
 
@@ -28,16 +26,15 @@
               <%- end -%>
 
             <%= yield %>
-
-
           </td>
         </tr>
       </table>
 
       <div id="cart">
         <%= render(:partial => "cart" , :object => @cart) %>
-      </div>    
+      </div>
 
-  
+    </div>
+ 
   </body>
 </html>

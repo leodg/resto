@@ -1,8 +1,14 @@
 class StoreController < ApplicationController
+  layout "store"
   def index
     @dishes = Dish.find_for_sale
     @cart = find_cart
-    @categories = Category.find(:all, :conditions => "parent_id is null");
+    @categories = Category.find_no_parent
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @dishes }
+    end
   end
 
   def add_to_cart
@@ -24,12 +30,6 @@ class StoreController < ApplicationController
   def find_cart
     session[:cart] ||= Cart.new
   end
-
-  def redirect_to_index(msg = nil)
-    flash[:notice] = msg if msg
-    redirect_to :action => 'index'
-  end
-
 
 
 end

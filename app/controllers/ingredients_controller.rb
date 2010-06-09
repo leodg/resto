@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
+  layout "admin"
   def index
     if params[:query]
       @ingredients = Ingredient.find(:all, :conditions => ['name LIKE ?', "%#{params[:query]}%"])

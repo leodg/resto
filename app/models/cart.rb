@@ -7,11 +7,11 @@ class Cart
 
 
   def add_dish(dish)
-    current_item = @items.find {|item| item.dish == dish}
+    current_item = @items.find {|item| item.dish == dish} # Есть ли блюдо уже в заказе
     if current_item
-      current_item.increment_quantity
+      current_item.increment_quantity # Увеличиваем кол-во в заказе
     else
-      @items << CartItem.new(dish)
+      @items << CartItem.new(dish) # Добавляем в заказ
     end
   end
 

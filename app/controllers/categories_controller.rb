@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  layout "admin"
   def index
     @categories = Category.find(:all, :conditions => "parent_id is null");
   end

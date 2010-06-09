@@ -7,7 +7,8 @@ class Dish < ActiveRecord::Base
   has_attached_file  :photo, :styles => { :small => "50x50>", :medium => "150x150>",  :normal => "400x400>" }
 
   def self.find_for_sale
-    find(:all)
+    find(:all,  :conditions => ["available = ?", true])
   end
+  
 
 end
